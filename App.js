@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
+import BudgetPlanning from './pages/BudgetPlanning'
 import HomePage from './pages/HomePage'
 import InputExpensePage from './pages/InputExpensePage'
 import LoginPage from './pages/LoginPage'
@@ -9,7 +10,8 @@ export default function App() {
     <View style={styles.container}>
       {/* <Text>Expense Manager</Text> */}
       {/* <LoginPage /> */}
-      <InputExpensePage />
+      {/* <InputExpensePage /> */}
+      <BudgetPlanning />
       {/* <HomePage /> */}
     </View>
   )
