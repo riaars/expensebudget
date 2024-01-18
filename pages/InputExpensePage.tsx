@@ -1,11 +1,18 @@
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
-import DateTimePicker from 'react-native-ui-datepicker';
-import dayjs from 'dayjs';
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 const InputExpensePage = (props) => {
-  //   const [chosenDate, setChosenDate] = useState(new Date());
+  const [chosenDate, setChosenDate] = useState(new Date());
+  const [showDate, setShowDate] = useState(false);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -18,11 +25,32 @@ const InputExpensePage = (props) => {
     {label: 'Subscription', value: 'subscription'},
     {label: 'Wishlist', value: 'wishlist'},
   ]);
+
+  const showDatepicker = () => {
+    setShowDate(true);
+  };
+
+  const onDateChange = (selectedDate: Date) => {
+    const currentDate = selectedDate;
+    setShowDate(false);
+    setChosenDate(currentDate);
+  };
+
   return (
     <View>
       <Text style={styles.title}>Add expense</Text>
       {/* <DateTimePicker value={value} onValueChange={(date) => setValue(date)} /> */}
-      <TextInput style={styles.input} placeholder="Select date" />
+      <TouchableOpacity onPress={showDatepicker} style={styles.dateStyle}>
+        <Text>
+          {chosenDate.getDate() +
+            '-' +
+            chosenDate.getMonth() +
+            1 +
+            '-' +
+            chosenDate.getFullYear()}
+        </Text>
+      </TouchableOpacity>
+      {showDate && <DateTimePicker value={chosenDate} />}
       <DropDownPicker
         open={open}
         value={value}
@@ -55,6 +83,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#656565',
     paddingBottom: 40,
+  },
+
+  dateStyle: {
+    backgroundColor: '#f4f5fb',
+    height: 40,
+    margin: 12,
+    borderRadius: 4,
+    padding: 12,
+    width: 250,
+    letterSpacing: 0.25,
   },
 
   input: {
