@@ -37,7 +37,7 @@ const InputExpensePage = (props) => {
   };
 
   return (
-    <View>
+    <View style={styles.pageContainer}>
       <Text style={styles.title}>Add expense</Text>
       {/* <DateTimePicker value={value} onValueChange={(date) => setValue(date)} /> */}
       <TouchableOpacity onPress={showDatepicker} style={styles.dateStyle}>
@@ -61,6 +61,7 @@ const InputExpensePage = (props) => {
         style={styles.dropdown}
         placeholderStyle={styles.placeholder}
         searchable={true}
+        dropDownContainerStyle={styles.dropDownContainerStyle}
       />
       <TextInput style={styles.input} placeholder="Expense details" />
       <TextInput
@@ -76,6 +77,13 @@ const InputExpensePage = (props) => {
 };
 
 const styles = StyleSheet.create({
+  pageContainer: {
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -109,10 +117,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4f5fb',
     borderWidth: 0,
     width: 250,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     height: 40,
     margin: 12,
     borderRadius: 4,
     padding: 12,
+  },
+
+  dropDownContainerStyle: {
+    justifyContent: 'center',
+    textAlign: 'center',
+    width: 250,
+    borderWidth: 0,
   },
 
   placeholder: {

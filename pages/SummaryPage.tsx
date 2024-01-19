@@ -3,13 +3,21 @@ import {Text, View, StyleSheet} from 'react-native';
 
 const SummaryPage = () => {
   return (
-    <View>
+    <View style={styles.pageContainer}>
       <Text style={styles.title}>Summary Page</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  pageContainer: {
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   title: {
     fontSize: 24,
     fontWeight: 'bold',

@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
 
   category_title: {
     textAlign: 'center',
+    color: '#656565',
   },
 });
 

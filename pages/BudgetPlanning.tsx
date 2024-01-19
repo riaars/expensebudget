@@ -52,10 +52,10 @@ const BudgetPlanning = (props) => {
     },
   ];
   return (
-    <View style={styles.budgetContainer}>
+    <View style={styles.pageContainer}>
       <Text style={styles.title}>Budget Planninng</Text>
       <TextInput style={styles.input} placeholder="Budget Name" />
-      <Text style={styles.subtitle}>Add Category</Text>
+      <Text style={styles.subtitle}>Choose Category</Text>
       <View style={styles.container}>
         {category_list.map((item, index) => (
           <CategoryComponent key={index} title={item.label} icon={item.icon} />
@@ -69,8 +69,12 @@ const BudgetPlanning = (props) => {
 };
 
 const styles = StyleSheet.create({
-  budgetContainer: {
+  pageContainer: {
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 24,
     alignItems: 'center',
+    justifyContent: 'center',
   },
 
   title: {
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     margin: 20,
     fontWeight: 'bold',
+    color: '#656565',
   },
 
   container: {
