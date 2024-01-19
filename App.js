@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
+import CatogeryDetails from './components/CatogeryDetails'
 import BudgetPlanning from './pages/BudgetPlanning'
 import HomePage from './pages/HomePage'
 import InputExpensePage from './pages/InputExpensePage'
@@ -11,8 +12,9 @@ export default function App() {
       {/* <Text>Expense Manager</Text> */}
       {/* <LoginPage /> */}
       {/* <InputExpensePage /> */}
-      <BudgetPlanning />
+      {/* <BudgetPlanning /> */}
       {/* <HomePage /> */}
+      <CatogeryDetails />
     </View>
   )
 }
