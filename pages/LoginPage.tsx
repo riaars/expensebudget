@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View, Pressable} from 'react-native';
 
-const LoginPage = (props) => {
+const LoginPage = ({navigation}) => {
   return (
     <View>
       <Text style={styles.title}>Expense Manager</Text>
@@ -11,7 +11,9 @@ const LoginPage = (props) => {
         keyboardType="email-address"
       />
       <TextInput style={styles.input} placeholder="password" />
-      <Pressable style={styles.button} onPress={props.onPress}>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('Home')}>
         <Text style={styles.text}>{'Login'}</Text>
       </Pressable>
     </View>

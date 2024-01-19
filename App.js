@@ -1,23 +1,18 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
-import CatogeryDetails from './components/CatogeryDetails'
-import BudgetPlanning from './pages/BudgetPlanning'
+import { StyleSheet } from 'react-native'
 import HomePage from './pages/HomePage'
-import InputExpensePage from './pages/InputExpensePage'
 import LoginPage from './pages/LoginPage'
-import SummaryPage from './pages/SummaryPage'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
+const Stack = createNativeStackNavigator()
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Text>Expense Manager</Text> */}
-      {/* <LoginPage /> */}
-      {/* <InputExpensePage /> */}
-      {/* <BudgetPlanning /> */}
-      {/* <HomePage /> */}
-      {/* <CatogeryDetails /> */}
-      <SummaryPage />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="Home" component={HomePage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 
