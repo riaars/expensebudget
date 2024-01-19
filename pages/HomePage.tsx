@@ -7,6 +7,7 @@ import SummaryPage from './SummaryPage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Profile from './Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,11 +19,13 @@ function HomePage() {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           if (route.name === 'InputExpense') {
-            iconName = focused ? 'ios-home' : 'ios-home-outline';
+            iconName = focused ? 'add-circle' : 'add-circle-outline';
           } else if (route.name === 'SummaryPage') {
-            iconName = focused ? 'ios-home' : 'ios-home-outline';
+            iconName = focused ? 'pie-chart' : 'pie-chart-outline';
           } else if (route.name === 'BudgetPlanning') {
-            iconName = focused ? 'ios-home' : 'ios-home-outline';
+            iconName = focused ? 'cash' : 'cash-outline';
+          } else if (route.name === 'ProfilePage') {
+            iconName = focused ? 'person-circle' : 'person-circle-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -30,8 +33,9 @@ function HomePage() {
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="InputExpense" component={InputExpensePage} />
-      <Tab.Screen name="SummaryPage" component={SummaryPage} />
       <Tab.Screen name="BudgetPlanning" component={BudgetPlanning} />
+      <Tab.Screen name="SummaryPage" component={SummaryPage} />
+      <Tab.Screen name="ProfilePage" component={Profile} />
     </Tab.Navigator>
   );
 }
