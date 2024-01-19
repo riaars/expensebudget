@@ -5,6 +5,7 @@ import BudgetPlanning from './pages/BudgetPlanning'
 import HomePage from './pages/HomePage'
 import InputExpensePage from './pages/InputExpensePage'
 import LoginPage from './pages/LoginPage'
+import SummaryPage from './pages/SummaryPage'
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       {/* <InputExpensePage /> */}
       {/* <BudgetPlanning /> */}
       {/* <HomePage /> */}
-      <CatogeryDetails />
+      {/* <CatogeryDetails /> */}
+      <SummaryPage />
     </View>
   )
 }
