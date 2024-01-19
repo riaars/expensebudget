@@ -16,13 +16,13 @@ function HomePage() {
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
-          if (route.name === 'InputExpense') {
+          if (route.name === 'AddExpense') {
             iconName = focused ? 'add-circle' : 'add-circle-outline';
-          } else if (route.name === 'SummaryPage') {
+          } else if (route.name === 'Summary') {
             iconName = focused ? 'pie-chart' : 'pie-chart-outline';
-          } else if (route.name === 'BudgetPlanning') {
+          } else if (route.name === 'BudgetPlan') {
             iconName = focused ? 'cash' : 'cash-outline';
-          } else if (route.name === 'ProfilePage') {
+          } else if (route.name === 'Profile') {
             iconName = focused ? 'person-circle' : 'person-circle-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -30,10 +30,10 @@ function HomePage() {
         tabBarActiveTintColor: '#F58B32',
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name="InputExpense" component={InputExpensePage} />
-      <Tab.Screen name="BudgetPlanning" component={BudgetPlanning} />
-      <Tab.Screen name="SummaryPage" component={SummaryPage} />
-      <Tab.Screen name="ProfilePage" component={Profile} />
+      <Tab.Screen name="AddExpense" component={InputExpensePage} />
+      <Tab.Screen name="BudgetPlan" component={BudgetPlanning} />
+      <Tab.Screen name="Summary" component={SummaryPage} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
