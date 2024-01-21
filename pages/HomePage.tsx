@@ -5,7 +5,8 @@ import SummaryPage from './SummaryPage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Profile from './Profile';
+import Profile from './ProfilePage';
+import ExpenseDetails from './ExpenseDetails';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,6 +25,8 @@ function HomePage() {
             iconName = focused ? 'cash' : 'cash-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'person-circle' : 'person-circle-outline';
+          } else if (route.name === 'ExpenseDetails') {
+            iconName = focused ? 'document-text' : 'document-text-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -31,6 +34,7 @@ function HomePage() {
         tabBarInactiveTintColor: 'gray',
       })}>
       <Tab.Screen name="AddExpense" component={InputExpensePage} />
+      <Tab.Screen name="ExpenseDetails" component={ExpenseDetails} />
       <Tab.Screen name="BudgetPlan" component={BudgetPlanning} />
       <Tab.Screen name="Summary" component={SummaryPage} />
       <Tab.Screen name="Profile" component={Profile} />
